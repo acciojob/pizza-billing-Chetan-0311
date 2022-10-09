@@ -85,6 +85,7 @@ public class Pizza {
         }
         if(takeAway) {
             calBill += 20;
+            System.out.println("Paperbag Added " + 20);
         }
         this.bill = "Total Price: " + String.valueOf(calBill);
         return this.bill;
