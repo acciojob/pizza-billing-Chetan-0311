@@ -18,6 +18,7 @@ public class Pizza {
         else {
             price = 400;
         }
+        this.bill += "Base Price Of The Pizza: " + this.price + "\n";
         extraCheese = false;
         extraToppings = false;
         takeAway = false;
@@ -32,6 +33,7 @@ public class Pizza {
         if(extraCheese == false && extraToppings == false){
             price += 80;
             extraCheese = true;
+            this.bill += "Extra Cheese Added:  80\n";
         }
     }
 
@@ -40,9 +42,11 @@ public class Pizza {
         if(extraToppings == false){
             if(isVeg){
                 price += 70;
+                this.bill += "Extra Toppings Added: 70\n";
             }
             else {
                 price += 120;
+                this.bill += "Extra Toppings Added: 120\n";
             }
             extraToppings = true;
         }
@@ -53,44 +57,13 @@ public class Pizza {
         if(takeAway == false){
             price += 20;
             takeAway = true;
+            this.bill += "Paperbag Added: 20\n";
         }
     }
 
     public String getBill(){
         // your code goes here
-        this.bill = "";
-        int calBill = 0;
-        if(isVeg){
-            this.bill += "Base Price Of The Pizza: 300 \n";
-            calBill += 300;
-        }
-        else{
-            this.bill += "Base Price Of The Pizza: 400\n";
-            calBill += 400;
-        }
-
-        if(extraCheese){
-            this.bill += "Extra Cheese Added:  80\n";
-            calBill += 80;
-        }
-
-        if(extraToppings){
-            if(isVeg){
-                this.bill += "Extra Toppings Added: 70\n";
-                calBill += 70;
-            }
-            else{
-                this.bill += "Extra Toppings Added: 120\n";
-                System.out.println();
-                calBill += 120;
-            }
-        }
-        if(takeAway) {
-            calBill += 20;
-            this.bill += "Paperbag Added: 20\n";
-        }
-
-        this.bill = "Total Price: " + String.valueOf(calBill);
+        this.bill += "Total Price: " + getPrice();
         return this.bill;
     }
 }
