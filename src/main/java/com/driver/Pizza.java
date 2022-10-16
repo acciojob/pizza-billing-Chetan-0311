@@ -62,7 +62,12 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        this.bill = "Base Price Of The Pizza: " + this.price + "\n";
+        if(isVeg) {
+            this.bill = "Base Price Of The Pizza: 300\n";
+        }
+        else{
+            this.bill = "Base Price Of The Pizza: 400\n";
+        }
         if(extraCheese){
             this.bill += "Extra Cheese Added: 80\n";
         }
