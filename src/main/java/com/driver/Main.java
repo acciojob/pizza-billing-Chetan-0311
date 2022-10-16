@@ -2,15 +2,11 @@ package com.driver;
 
 public class Main {
   public static void main(String[] args) {
-    DeluxePizza p = new DeluxePizza(false);
+    Pizza p = new Pizza(false);
     p.addExtraCheese();
-    p.addExtraToppings();
-    p.addExtraToppings();
-    p.addExtraCheese();
-    p.getBill();
-    p.getBill();
-//    assertEquals( "Base Price Of The Pizza: 400\nExtra Cheese Added: 80\nExtra Toppings Added: 120\nTotal Price: 600\n", p.getBill());
-    System.out.println(p.getBill());
+    p.addTakeaway();
+//    assertEquals( 500, p.getPrice());
+    System.out.println(p.getPrice());
 //    DeluxePizza dp = new DeluxePizza(false);
 //    dp.addTakeaway();
 //    dp.addExtraCheese();

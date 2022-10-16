@@ -9,22 +9,24 @@ public class Pizza {
     private boolean extraCheese;
     private boolean extraToppings;
     private boolean takeAway;
+    private boolean isBillGenrated;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
         if(isVeg){
-            price = 300;
-            toppings = 70;
+            this.price = 300;
+            this.toppings = 70;
         }
         else {
-            price = 400;
-            toppings = 120;
+            this.price = 400;
+            this.toppings = 120;
         }
 
         extraCheese = false;
         extraToppings = false;
         takeAway = false;
+        isBillGenrated = false;
     }
 
     public int getPrice(){
@@ -62,22 +64,26 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        if(isVeg) {
-            this.bill = "Base Price Of The Pizza: 300\n";
+        if(isBillGenrated == false) {
+            isBillGenrated = true;
+            if (isVeg) {
+                this.bill = "Base Price Of The Pizza: 300\n";
+            } else {
+                this.bill = "Base Price Of The Pizza: 400\n";
+            }
+            if (extraCheese) {
+                this.bill += "Extra Cheese Added: 80\n";
+            }
+            if (extraToppings) {
+                this.bill += "Extra Toppings Added: " + this.toppings + "\n";
+            }
+            if (takeAway) {
+                this.bill += "Paper Bag Added: 20 \n";
+            }
+            this.bill += "Total Price: " + getPrice() + "\n";
+
         }
-        else{
-            this.bill = "Base Price Of The Pizza: 400\n";
-        }
-        if(extraCheese){
-            this.bill += "Extra Cheese Added: 80\n";
-        }
-        if(extraToppings){
-            this.bill += "Extra Toppings Added: " + this.toppings+ "\n";
-        }
-        if(takeAway){
-            this.bill += "Paper Bag Added: 20 \n";
-        }
-        this.bill += "Total Price: " + getPrice()+"\n";
         return this.bill;
     }
+
 }
