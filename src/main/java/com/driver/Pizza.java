@@ -3,6 +3,7 @@ package com.driver;
 public class Pizza {
 
     private int price;
+    private int toppings;
     private Boolean isVeg;
     private String bill;
     private boolean extraCheese;
@@ -14,11 +15,13 @@ public class Pizza {
         // your code goes here
         if(isVeg){
             price = 300;
+            toppings = 70;
         }
         else {
             price = 400;
+            toppings = 120;
         }
-        this.bill = "Base Price Of The Pizza: " + this.price + "\n";
+
         extraCheese = false;
         extraToppings = false;
         takeAway = false;
@@ -33,7 +36,6 @@ public class Pizza {
         if(extraCheese == false && extraToppings == false){
             price += 80;
             extraCheese = true;
-            this.bill += "Extra Cheese Added:  80\n";
         }
     }
 
@@ -42,11 +44,9 @@ public class Pizza {
         if(extraToppings == false){
             if(isVeg){
                 price += 70;
-                this.bill += "Extra Toppings Added: 70\n";
             }
             else {
                 price += 120;
-                this.bill += "Extra Toppings Added: 120\n";
             }
             extraToppings = true;
         }
@@ -57,13 +57,22 @@ public class Pizza {
         if(takeAway == false){
             price += 20;
             takeAway = true;
-            this.bill += "Paperbag Added: 20\n";
         }
     }
 
     public String getBill(){
         // your code goes here
-        this.bill += "Total Price: " + getPrice();
+        this.bill = "Base Price Of The Pizza: " + this.price + "\n";
+        if(extraCheese){
+            this.bill += "Extra Cheese Added: " + this.price + "\n";
+        }
+        if(extraToppings){
+            this.bill += "Extra Toppings Added: " + this.toppings+ "\n";
+        }
+        if(takeAway){
+            this.bill += "Paper Bag Added: 20 \n";
+        }
+        this.bill += "Total Price: " + getPrice()+"\n";
         return this.bill;
     }
 }
