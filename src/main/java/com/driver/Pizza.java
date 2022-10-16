@@ -64,7 +64,7 @@ public class Pizza {
         // your code goes here
         this.bill = "Base Price Of The Pizza: " + this.price + "\n";
         if(extraCheese){
-            this.bill += "Extra Cheese Added: " + this.price + "\n";
+            this.bill += "Extra Cheese Added: 80\n";
         }
         if(extraToppings){
             this.bill += "Extra Toppings Added: " + this.toppings+ "\n";
