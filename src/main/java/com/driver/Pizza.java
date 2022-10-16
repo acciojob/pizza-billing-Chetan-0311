@@ -9,7 +9,7 @@ public class Pizza {
     private boolean extraCheese;
     private boolean extraToppings;
     private boolean takeAway;
-    private boolean isBillGenrated;
+    private boolean isBillGenerated;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -26,7 +26,7 @@ public class Pizza {
         extraCheese = false;
         extraToppings = false;
         takeAway = false;
-        isBillGenrated = false;
+        isBillGenerated = false;
     }
 
     public int getPrice(){
@@ -64,8 +64,8 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        if(isBillGenrated == false) {
-            isBillGenrated = true;
+        if(isBillGenerated == false) {
+            isBillGenerated = true;
             if (isVeg) {
                 this.bill = "Base Price Of The Pizza: 300\n";
             } else {
@@ -78,7 +78,7 @@ public class Pizza {
                 this.bill += "Extra Toppings Added: " + this.toppings + "\n";
             }
             if (takeAway) {
-                this.bill += "Paper Bag Added: 20 \n";
+                this.bill += "Paperbag Added: 20 \n";
             }
             this.bill += "Total Price: " + getPrice() + "\n";
 
